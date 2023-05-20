@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="ProjetoTCC.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:viewmodel="clr-namespace:ProjetoTCC.ViewModel"
+    x:DataType="viewmodel:MainViewModel"
+    BackgroundImageSource="background.jpg"
+    Shell.NavBarIsVisible="False">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25"
+            VerticalOptions="Center">
+
+            <Image
+                x:Name="image"
+                HeightRequest="200"
+                HorizontalOptions="Center"
+                SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                Source="logo.jpg" />
+
+            <Label
+                FontAttributes="Bold"
+                FontSize="18"
+                HorizontalOptions="Center"
+                Text="{Binding Count, StringFormat='Contador Atual: {0}'}" />
+
+
+            <Button
+                Command="{Binding IncrementCountCommand}"
+                FontAttributes="Bold"
+                HorizontalOptions="Center"
+                SemanticProperties.Hint="Counts the number of times you click"
+                Text="Contador" />
+
+            <Button
+                Clicked="Button_Clicked"
+                FontAttributes="Bold"
+                HorizontalOptions="Center"
+                Text="Eventos" />
+
+            <Button
+                Command="{Binding NavigateCommand}"
+                FontAttributes="Bold"
+                HorizontalOptions="Center"
+                Text="Portal do aluno" />
+
+            <Button
+                Command="{Binding NavigateCovidCommand}"
+                FontAttributes="Bold"
+                HorizontalOptions="Center"
+                Text="Casos Covid" />
+
+            <Button
+                Command="{Binding CheckInternetCommand}"
+                FontAttributes="Bold"
+                HorizontalOptions="Center"
+                Text="Verificar Internet" />
+
+            <Button
+                Clicked="BtnAlunos_Clicked"
+                FontAttributes="Bold"
+                HorizontalOptions="Center"
+                Text="Alunos" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
